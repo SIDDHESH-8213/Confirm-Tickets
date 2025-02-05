@@ -39,5 +39,5 @@ Confirm Tickets is a **high-performance backend system** designed to handle **ma
 ## 📦 Installation  
 1. **Clone the Repository**  
    ```bash
-   git clone https://github.com/yourusername/concertify.git
-   cd concertify
+   git clone https://github.com/SIDDHESH-8213/Confirm-Tickets.git
+   cd Confirm Tickets
