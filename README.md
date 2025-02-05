@@ -36,8 +36,54 @@ Confirm Tickets is a **high-performance backend system** designed to handle **ma
 
 ---
 
-## 📦 Installation  
-1. **Clone the Repository**  
-   ```bash
-   git clone https://github.com/SIDDHESH-8213/Confirm-Tickets.git
-   cd Confirm Tickets
+### 🌐 API Endpoints
+
+| Endpoint             | Method | Description                 | Example Request Body |
+|----------------------|--------|-----------------------------|----------------------|
+| `/api/events`       | GET    | List all events            | -                    |
+| `/api/events`       | POST   | Create a new event         | `{ name, date, venue, total_seats }` |
+| `/api/tickets/lock` | POST   | Lock a seat for booking    | `{ eventId, seatNumber, userId }` |
+| `/api/tickets/book` | POST   | Confirm seat booking       | `{ eventId, seatNumber, userId }` |
+| `/api/auth/register`| POST   | Register a new user        | `{ username, password }` |
+| `/api/auth/login`   | POST   | Login and get JWT token    | `{ username, password }` |
+
+---
+
+### 🧠 How It Works
+
+#### 1️⃣ Event Management
+- **Create Events:** Admins can create events with details like name, date, venue, and total seats.
+- **List Events:** Users can fetch a list of all available events.
+
+#### 2️⃣ Seat Locking
+- When a user selects a seat, it’s temporarily locked in Redis for 5 minutes to prevent overbooking.
+- If the user doesn’t complete the booking within 5 minutes, the seat is automatically unlocked.
+
+#### 3️⃣ Payment Integration
+- Payments are processed asynchronously to avoid blocking the main thread.
+- A simulated payment gateway is used for testing.
+
+#### 4️⃣ User Authentication
+- Users can register and log in using a username and password.
+- A JWT token is issued upon successful login and must be included in the headers of authenticated requests.
+
+#### 5️⃣ Scalability
+- **Redis** caches frequently accessed data (e.g., event details, seat availability) to reduce database load.
+- **PostgreSQL** handles persistent data storage with read replicas for high availability.
+- **Auto-scaling** ensures the system can handle traffic spikes by adding more EC2 instances as needed.
+
+---
+
+
+### 🛠️ Technologies Used
+- **Node.js & Express.js** - Backend framework
+- **PostgreSQL** - Database for persistent storage
+- **Redis** - Caching and seat-locking mechanism
+- **JWT** - Authentication and security
+- **AWS EC2** - Auto-scalable cloud hosting
+
+---
+
+### 📌 License
+This project is open-source and available under the [MIT License](LICENSE).
+
