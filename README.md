@@ -7,7 +7,10 @@
 ![License](https://img.shields.io/badge/license-MIT-blue) 
 ![AWS](https://img.shields.io/badge/deployed%20on-AWS-orange)
 
-Concertify is a **high-performance backend system** designed to handle **massive traffic spikes** during ticket sales (e.g., concerts, sports events). Built with **Node.js**, **Redis**, and **PostgreSQL**, it ensures **low latency**, **high availability**, and **scalability**. Whether you're selling tickets for a Coldplay concert or a local event, Concertify has you covered.
+![bms drawio (1)](https://github.com/user-attachments/assets/0cf91829-2379-4fa1-b1ee-39514bc90d2c)
+
+
+Confirm Tickets is a **high-performance backend system** designed to handle **massive traffic spikes** during ticket sales (e.g., concerts, sports events). Built with **Node.js**, **Redis**, and **PostgreSQL**, it ensures **low latency**, **high availability**, and **scalability**. Whether you're selling tickets for a Coldplay concert or a local event, Concertify has you covered.
 
 ---
 
