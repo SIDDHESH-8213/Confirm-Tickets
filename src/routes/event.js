@@ -1,6 +1,8 @@
 const express = require('express');
 const { pool } = require('../models/event');
 const router = express.Router();
+const {createEventTable} = require('../models/event');
+createEventTable();
 
 router.get('/', async (req, res) => {
   try {

@@ -1,23 +1,28 @@
 const express = require('express');
 const { lockSeat, bookSeat } = require('../models/ticket');
 const router = express.Router();
+const redisClient = require('../config/redis');
 
-// Lock a seat
 router.post('/lock', async (req, res) => {
   const { eventId, seatNumber, userId } = req.body;
   try {
-    const locked = await lockSeat(eventId, seatNumber, userId);
-    if (locked) {
-      res.json({ message: 'Seat locked successfully' });
+    if (!redisClient.isReady) await redisClient.connect();
+
+    
+    const lockKey = `event:${eventId}:seat:${seatNumber}`;
+    const locked = await redisClient.set(lockKey, userId, { EX: 300, NX: true });
+
+    if (locked === 'OK') {
+      res.json({ message: "Seat locked! Proceed to payment." });
     } else {
-      res.status(400).json({ error: 'Seat already locked' });
+      res.status(400).json({ error: "Seat already locked!" });
     }
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    console.error("Seat locking error:", err);
+    res.status(500).json({ error: "Failed to lock seat." });
   }
 });
 
-// Book a seat
 router.post('/book', async (req, res) => {
   const { eventId, seatNumber, userId } = req.body;
   try {

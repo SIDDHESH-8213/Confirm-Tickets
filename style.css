@@ -1,0 +1,67 @@
+/* style.css */
+:root {
+    --primary-color: #28a745; /* Example: Emerald Green */
+    --heading-font: 'Montserrat', sans-serif; /* Example */
+    --body-font: 'Open Sans', sans-serif; /* Example */
+}
+
+body {
+    font-family: var(--body-font);
+    margin: 0;
+    color: #333; /* Dark gray text */
+}
+
+h1, h2, h3 {
+    font-family: var(--heading-font);
+    color: var(--primary-color); /* Or white, depending on context */
+}
+
+.hero {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 100px 0; /* Adjust padding as needed */
+}
+
+.hero h1 {
+    font-size: 3em;
+}
+
+.hero button {
+    background-color: #fff;
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.about {
+    padding: 50px;
+    background-color: white;
+}
+
+.projects {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 50px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 20px;
+}
+
+.project {
+    border: 1px solid #ddd;
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* Add more styles for other sections, hover effects, etc. */

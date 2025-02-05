@@ -17,7 +17,7 @@ services:
     image: postgres
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: yourpassword
+      POSTGRES_PASSWORD: lmmv1033
       POSTGRES_DB: ticketing
     ports:
       - "5432:5432"
