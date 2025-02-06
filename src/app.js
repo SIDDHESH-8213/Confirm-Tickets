@@ -22,7 +22,7 @@ app.use('/api/auth', authRoutes);
 
 
 app.get('/', (req, res) => {
-  res.send('Ticketing System Backend');
+  res.send('Ticketing System Backend- completed');
 });
 
 app.listen(PORT, () => {
