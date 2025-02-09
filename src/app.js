@@ -22,7 +22,7 @@ app.use('/api/auth', authRoutes);
 
 
 app.get('/', (req, res) => {
-  res.send('Testing');
+  res.send('Testing completed');
 });
 
 app.listen(PORT, () => {
