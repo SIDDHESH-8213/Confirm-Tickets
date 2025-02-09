@@ -22,7 +22,7 @@ app.use('/api/auth', authRoutes);
 
 
 app.get('/', (req, res) => {
-  res.send('Ticketing System Backend- completed');
+  res.send('Testing google idx google project');
 });
 
 app.listen(PORT, () => {
